@@ -35,11 +35,15 @@ class _HelloPageState extends State<HelloPage> {
       ),
       body: Text(
         message,
-        style: TextStyle(fontSize: 30),
+        style: TextStyle(fontSize: 58),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icon.add),
-        Onpressed: () => print('눌림'),
+        Onpressed: (){
+          setState(() {
+          message = "헬로 월드";
+             }
+        }
       ),
     );
   }
