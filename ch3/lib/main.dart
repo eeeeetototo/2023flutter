@@ -18,19 +18,35 @@ class MyApp extends StatelessWidget {
 }
 
 class HelloPage extends StatefulWidget{
+  late String title;
+
+  HelloPage({super.key, String title}){
+    this.title = title;
+  }
+
   State<HelloPage> createState() => _HelloPageState();
 }
 
 class _HelloPageState extends State<HelloPage> {
-  Widget build(BuildContext context){
-  return Scaffold(
-    appBar:AppBar(
-      title: Text('Hello World'),
-    ),
-    body: Text(
-      '헬로 월드',
-      style: TextStyle(fontSize: 30),
-    ),
-  );
- }
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Hello World'),
+      ),
+      body: Text(
+        message,
+        style: TextStyle(fontSize: 30),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icon.add),
+        Onpressed: () => print('눌림'),
+      ),
+    );
+  }
+
+  void ChangeMessage(){
+    setState(() {
+      message = "헬로 월드";
+    });
+  }
 }
