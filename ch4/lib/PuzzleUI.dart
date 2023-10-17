@@ -17,6 +17,9 @@ class _StackTestState extends State<StackTest> {
       return '';
     else
       return '$value';
+
+    @override
+    Widget build(BuildContext context){...}
   }
 
   @override
@@ -33,87 +36,91 @@ class _StackTestState extends State<StackTest> {
         crossAxisCount: 4,
         children: [
           ElevatedButton(
-            onPressed: (){},
+            onPressed: (){MoveButton(0);},
             child: Text(GetButtonText(1)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(2)'),
+            onPressed: (){MoveButton(1);},
+            child: Text(GetButtonText(2)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(3)'),
+            onPressed: (){MoveButton(2);},
+            child: Text(GetButtonText(3)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(4)'),
+            onPressed: (){MoveButton(3);},
+            child: Text(GetButtonText(4)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(5)'),
+            onPressed: (){MoveButton(4);},
+            child: Text(GetButtonText(5)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(6)'),
+            onPressed: (){MoveButton(5);},
+            child: Text(GetButtonText(6)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(7)'),
+            onPressed: (){MoveButton(6);},
+            child: Text(GetButtonText(7)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(8)'),
+            onPressed: (){MoveButton(7);},
+            child: Text(GetButtonText(8)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(9)'),
+            onPressed: (){MoveButton(8);},
+            child: Text(GetButtonText(9)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(10)'),
+            onPressed: (){MoveButton(9);},
+            child: Text(GetButtonText(10)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(11)'),
+            onPressed: (){MoveButton(10);},
+            child: Text(GetButtonText(11)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(12)'),
+            onPressed: (){MoveButton(11);},
+            child: Text(GetButtonText(12)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(13)'),
+            onPressed: (){MoveButton(12);},
+            child: Text(GetButtonText(13)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(14)'),
+            onPressed: (){MoveButton(13);},
+            child: Text(GetButtonText(14)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(15)'),
+            onPressed: (){MoveButton(14);},
+            child: Text(GetButtonText(15)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(16)'),
+            onPressed: (){MoveButton(15);},
+            child: Text(GetButtonText(16)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(17)'),
+            onPressed: (){MoveButton(16);},
+            child: Text'GetButtonText(17)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(18)'),
+            onPressed: (){MoveButton(17);},
+            child: Text(GetButtonText(18)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(19)'),
+            onPressed: (){MoveButton(18);},
+            child: Text(GetButtonText(19)),
           ),
           ElevatedButton(
-            onPressed: (){},
-            child: Text('GetButtonText(20)'),
+            onPressed: (){MoveButton(19);},
+            child: Text(GetButtonText(20)),
           ),
           ElevatedButton(
-            onPressed: (){},
+            onPressed: (){
+              setState(() {
+                pg.Shuffle();
+              });
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.cyan,
             ),
@@ -127,3 +134,4 @@ class _StackTestState extends State<StackTest> {
     );
   }
 }
+
