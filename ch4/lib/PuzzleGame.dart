@@ -4,6 +4,5 @@ class PuzzleGame{
 
   int GetValue(int index){
     return values[index];
-
   }
 }
