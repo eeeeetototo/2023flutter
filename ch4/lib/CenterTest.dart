@@ -15,31 +15,15 @@ class _CenterTestState extends State<CenterTest> {
           title: Text("Expended Test"),
           backgroundColor: Colors.deepPurple,
         ),
-        body: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.red,
-                width: 100,
-                ),
-            ),
-            Expanded(
-              flex: 2,
-              child: Container(
-                color: Colors.green,
-                width: 100,
-              ),
-            ),
-            Expanded(
-              child: Container(
-                color: Colors.blue,
-                width: 100,
-                height: 10,
-              ),
-            ),
-          ],
-        ),
-    );
+        body: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          elevation: 100,
+          child: Container(
+            color: Colors.red,
+          )
+        )
+      );
+    }
   }
-}
