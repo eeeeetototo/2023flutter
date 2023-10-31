@@ -15,17 +15,14 @@ class _ButtomTestState extends State<ButtomTest> {
         title: Text('Button Test'),
         backgroundColor: Colors.deepPurple,
       ),
-      body: Center(
-        child: IconButton(
-          icon: Icon(Icons.add),
-          iconSize: 200,
-          onPressed: (){
-            setState(() {
+      body: Image.network('http://bit.ly/2Pvz4t8'),
+      );
 
-            });
-          }
-        ),
-      ),
-    );
+    return s;
+  }
+
+  void MyPressed(){
+    setState(() {
+    });
   }
 }
