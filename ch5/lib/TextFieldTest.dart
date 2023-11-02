@@ -9,6 +9,7 @@ class TextFieldTest extends StatefulWidget {
 }
 
 class _TextFieldTestState extends State<TextFieldTest> {
+  String inputText = '입력한 결과';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,19 +19,43 @@ class _TextFieldTestState extends State<TextFieldTest> {
       ),
       body: Column(
         children: [
-          Text('Input contents'
+          Text('$inputText',
             style:TextStyle(
               fontSize: 40,
             ),
           ),
-          TextField(
+          SizedBox(
+            height: 50,
           ),
           TextField(
+            onChanged: (text){
+              setState(() {
+                inputText = text;
+              });
+            },
+          ),
+          SizedBox(
+            height: 50,
+          ),
+          TextField(
+            onChanged: (text){
+              setState(() {
+                inputText = text;
+              });
+            },
             decoration: InputDecoration(
               labelText: '이름을 입력하세요'
               ),
-          )
+          ),
+          SizedBox(
+            height: 50,
+          ),
           TextField(
+            onChanged: (text){
+              setState(() {
+                inputText = text;
+              });
+            },
             decoration: InputDecoration(
               labelText: '나이를 입력하세요 '
             ),
