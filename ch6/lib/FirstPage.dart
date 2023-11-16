@@ -35,7 +35,7 @@ class _FirstPageState extends State<FirstPage> {
                 //MaterialPageRoute(builder: (context) => SecondPage()), 람다식
               );
               setState(() {
-                resultStr = result;
+                resultStr = result.name;
               });
             },
           ),
