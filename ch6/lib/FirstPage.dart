@@ -29,13 +29,13 @@ class _FirstPageState extends State<FirstPage> {
             child: Text('다음 페이지로 이동'),
             onPressed: () async {
               final person = new Person('홍길동', 30);
-              final result = await Navigator.push(
+              final result = await Navigator.pushNamed(
                   context,
-                  MaterialPageRoute(builder: (context){return SecondPage(person: person);}),
+                  '/first');
+                  //MaterialPageRoute(builder: (context){return SecondPage(person: person);}),
                 //MaterialPageRoute(builder: (context) => SecondPage()), 람다식
-              );
               setState(() {
-                resultStr = result.name;
+                //resultStr = result.name.toString();
               });
             },
           ),

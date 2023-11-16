@@ -1,6 +1,6 @@
-import 'package:ch6/FirstPage.dart';
-import 'package:ch6/SecondPage.dart';
 import 'package:flutter/material.dart';
+
+import 'MyHomePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,15 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FirstPage(),
-      routes: {
-        '/first': (context)=>const FirstPage(),
-      },
+      home: const MyHomePage(),
     );
   }
 }
