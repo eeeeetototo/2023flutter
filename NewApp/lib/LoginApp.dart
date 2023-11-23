@@ -29,6 +29,18 @@ class _LoginAppState extends State<LoginApp> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: '아이디',
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: '비밀번호',
+              ),
+            ),
             ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
