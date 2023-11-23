@@ -1,4 +1,5 @@
 import 'package:ch8/BmiMain.dart';
+import 'package:ch8/BmiResult.dart';
 import 'package:ch8/MyCustomForm.dart';
 import 'package:ch8/MyForm.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
           //backgroundColor: Colors.purple,
         //),
         //body: MyForm(),
-    home: const BmiMain(),
+      //home: const BmiMain(),
+      home: BmiResult(1.0, 2.0),
 
     );
   }
