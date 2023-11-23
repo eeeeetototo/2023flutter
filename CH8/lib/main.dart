@@ -1,3 +1,4 @@
+import 'package:ch8/BmiMain.dart';
 import 'package:ch8/MyCustomForm.dart';
 import 'package:ch8/MyForm.dart';
 import 'package:flutter/material.dart';
@@ -20,15 +21,18 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       //home: const MyCustomForm()
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('폼 검증 데모'),
-          backgroundColor: Colors.purple,
-        ),
-        body: MyForm(),
-      ),
+      //home: Scaffold(
+        //appBar: AppBar(
+          //title: Text('폼 검증 데모'),
+          //backgroundColor: Colors.purple,
+        //),
+        //body: MyForm(),
+    home: const BmiMain(),
+
     );
   }
 }
+
+
 
 
