@@ -29,16 +29,26 @@ class _LoginAppState extends State<LoginApp> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: '아이디',
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
+              child: Container(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: '아이디',
+                  ),
+                ),
               ),
             ),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: '비밀번호',
+            Padding(
+              padding: const EdgeInsets.fromLTRB(30, 30, 30, 20),
+              child: Container(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: '비밀번호',
+                  ),
+                ),
               ),
             ),
             ElevatedButton(
