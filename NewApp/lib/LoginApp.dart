@@ -1,3 +1,4 @@
+import 'package:project011/LoginData.dart';
 import 'package:flutter/material.dart';
 
 class LoginApp extends StatefulWidget {
@@ -8,6 +9,16 @@ class LoginApp extends StatefulWidget {
 }
 
 class _LoginAppState extends State<LoginApp> {
+  final _formKey = GlobalKey<FormState>();
+  final _loginController = TextEditingController();
+  final _passwardcontroller = TextEditingController();
+
+void dispose(){
+  _loginController.dispose();
+  _passwardcontroller.dispose();
+  super.dispose();
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,22 +43,38 @@ class _LoginAppState extends State<LoginApp> {
             Padding(
               padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
               child: Container(
-                child: TextField(
+                child: TextFormField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: '아이디',
+                      border: OutlineInputBorder(),
+                      hintText: '아이디'
                   ),
+                  keyboardType: TextInputType.number,
+                  controller: _loginController,
+                  validator: (value){
+                    if(value!.trim().isEmpty){
+                      return '아이디를 입력하세요,';
+                    }
+                    return null;
+                  },
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(30, 30, 30, 20),
               child: Container(
-                child: TextField(
+                child: TextFormField(
                   decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: '비밀번호',
+                      border: OutlineInputBorder(),
+                      hintText: '비밀번호'
                   ),
+                  keyboardType: TextInputType.number,
+                  controller: _passwardcontroller,
+                  validator: (value){
+                    if(value!.trim().isEmpty){
+                      return '비밀번호를 입력하세요,';
+                    }
+                    return null;
+                  },
                 ),
               ),
             ),
