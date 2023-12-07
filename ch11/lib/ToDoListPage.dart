@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'ToDo.dart';
 
@@ -41,10 +44,19 @@ class _ToDoListPageState extends State<ToDoListPage> {
                 ),
               ],
             ),
-            Expanded(
-                child: ListView(
-                  children: _items.map((todo) => _buildItemWidget(todo)).toList(),
-                ),
+            StreamBuilder<QuerySnapshot>(
+              stream: FirebaseFirestore.instance.collection('todo2').snapshots(),
+              builder: (context, snapshot) {
+                if(!snapshot.hasData){
+                  return CircularProgressIndicator();
+                }
+                final documents = snapshot.data!.docs;
+                return Expanded(
+                    child: ListView(
+                      children: documents.map((doc) => _buildItemWidget(doc)).toList(),
+                    ),
+                );
+              }
             ),
           ],
         ),
@@ -52,9 +64,11 @@ class _ToDoListPageState extends State<ToDoListPage> {
     );
   }
 
-  Widget _buildItemWidget(ToDo todo){
+  Widget _buildItemWidget(DocumentSnapshot doc){
+    final todo = ToDo(doc['title'], isDone: doc['isDone']);
+
     return ListTile(
-      onTap: (){},
+      onTap: ()=>_toggleToDo(doc),
       title: Text(
         todo.title,
         style: todo.isDone
@@ -66,15 +80,25 @@ class _ToDoListPageState extends State<ToDoListPage> {
       ),
       trailing: IconButton(
         icon: Icon(Icons.delete_forever),
-        onPressed: (){},
+        onPressed: ()=> _deleteToDo(doc),
       ),
     );
   }
 
   void _addTodo(ToDo todo){
-    setState(() {
-      _items.add(todo);
-      _toDoController.text = '';
-    });
+    FirebaseFirestore.instance.collection('todo2')
+        .add({'title' : todo.title, 'isDone' : todo.isDone});
+    _toDoController.text ='';
+  }
+
+  void _deleteToDo(DocumentSnapshot doc){
+    FirebaseFirestore.instance.collection('todo2').doc(doc.id).delete();
+  }
+
+  void _toggleToDo(DocumentSnapshot doc){
+    FirebaseFirestore.instance.collection('todo2').doc(doc.id).update(
+      {'isDone' : !doc['isDone']}
+    );
+
   }
 }

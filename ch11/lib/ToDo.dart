@@ -1,6 +1,6 @@
 class ToDo {
   String title;
-  bool isDone = false;
+  bool isDone;
 
-  ToDo(this.title);
+  ToDo(this.title, {this.isDone=false});
 }
