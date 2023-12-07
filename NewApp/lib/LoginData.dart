@@ -28,14 +28,14 @@ class NextPage extends StatelessWidget {
         backgroundColor: Colors.deepPurple,
       ),
       body: Container(
-        color: Colors.cyan,
+        color: Colors.white,
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
                 "축하합니다",
             style: TextStyle(
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w600,
               fontSize: 80,
               color: Colors.deepPurple,
               ),
