@@ -10,11 +10,11 @@ class LoginApp extends StatefulWidget {
 
 class _LoginAppState extends State<LoginApp> {
   final _formKey = GlobalKey<FormState>();
-  final _loginController = TextEditingController();
+  final _idcontroller = TextEditingController();
   final _passwardcontroller = TextEditingController();
 
 void dispose(){
-  _loginController.dispose();
+  _idcontroller.dispose();
   _passwardcontroller.dispose();
   super.dispose();
 }
@@ -49,7 +49,7 @@ void dispose(){
                       hintText: '아이디'
                   ),
                   keyboardType: TextInputType.number,
-                  controller: _loginController,
+                  controller: _idcontroller,
                   validator: (value){
                     if(value!.trim().isEmpty){
                       return '아이디를 입력하세요,';
@@ -78,13 +78,37 @@ void dispose(){
                 ),
               ),
             ),
-            ElevatedButton(
-                onPressed: () {},
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.purple),
-                    foregroundColor: MaterialStateProperty.all(Colors.white),
-                ),
-                child: Text("Login")
+            ButtonTheme(
+                minWidth: 100.0,
+                height: 50.0,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (_idcontroller.text == 'ak2094@naver.com' &&
+                        _passwardcontroller.text == '0910') {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  NextPage()));
+                    }
+                    else if (_idcontroller.text == 'ak2094@naver.com' && _idcontroller.text != '0910') {
+                      LoginData(context, Text('Wrong password'));
+                    }
+                    else if (_idcontroller.text != 'ak2094@naver.com' && _passwardcontroller.text == '0910') {
+                      LoginData(context, Text('Wrong email'));
+                    }
+                    else {
+                      LoginData(context, Text('Check your info again'));
+                    }
+                  },
+                  child: Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                    size: 35.0,
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.orangeAccent),
+                )
             ),
             ElevatedButton(
                 onPressed: () {},
